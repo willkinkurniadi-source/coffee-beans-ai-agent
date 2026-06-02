@@ -1,0 +1,3 @@
+order_id,customer_name,lead_id,sku,nama_produk,quantity_kg,unit_price,discount,shipping_fee,tax,total,status,invoice_no,payment_due_date,packing_status,production_notes,ship_to,expedition,tracking_no,order_date
+O-0001,Contoh Cafe Jakarta,L-0001,CB-7030-001,Classic Blend,2,195000,0,25000,42900,457900,approved,INV-0001,2026-06-01,pending,"packing 2 x 1kg, whole beans","Jakarta Selatan",JNE,,2026-05-30
+O-0002,Tokopedia Buyer Sample,,HR-ROB-001,House Robusta,1,148000,0,15000,16280,179280,paid,INV-0002,2026-05-31,pending,"packing 1 x 1kg, whole beans","Jakarta Barat",SiCepat,,2026-05-30

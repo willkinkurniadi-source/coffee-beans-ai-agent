@@ -1,0 +1,6 @@
+item_id,item_name,variant,stock_qty,reorder_point,usage_per_order,lead_time_days,supplier,status
+PKG-250,pouch flat bottom hitam,250g,50,100,1,7,GoPackit,needs_reorder
+PKG-500,pouch flat bottom hitam,500g,50,100,1,7,GoPackit,needs_reorder
+PKG-1000,pouch flat bottom hitam,1kg,40,80,1,7,GoPackit,needs_reorder
+LBL-001,stiker WILLKIN,all size,0,200,1,3,print vendor,urgent
+SMP-300,sample pack,300g,30,50,1,5,GoPackit,watch

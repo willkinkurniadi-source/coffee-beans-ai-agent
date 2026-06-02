@@ -1,0 +1,29 @@
+content_id,date,channel,content_type,objective,product_focus,brief,hook,caption_draft,script_draft,cta,visual_brief,design_prompt,design_status,design_message,image_url,status,url,publish_status,publish_message,published_at,owner,created_at,updated_at
+C-0001,2026-05-30,Instagram,feed,awareness,Classic Blend,,,,,,,,,,,approved,,blocked,Instagram API belum dikonfigurasi (INSTAGRAM_API_URL/INSTAGRAM_API_TOKEN).,,marketing,,2026-05-31T08:35:53.371Z
+C-0002,2026-05-30,TikTok,short_video,lead,House Robusta,,,,,,,,,,,draft,,,,,marketing,,
+C-0003,2026-05-30,WhatsApp,broadcast,sample_request,Classic Blend,,,,,,,,,,,needs_approval,,,,,sales,,
+C-0004,2026-05-31,Shopify Blog,seo,organic_search,Arabica Gayo Aceh G1,,,,,,,,,,,draft,,,,,marketing,,
+C-1780204178494-01,2026-05-31,Instagram,feed,sample_request,Classic Blend,Beans enak saja tidak cukup kalau cafe butuh konsistensi setiap hari.,Beans enak saja tidak cukup kalau cafe butuh konsistensi setiap hari.,"Untuk cafe, coffee beans harus stabil: rasa konsisten, mudah dikalibrasi, dan supply aman. Classic Blend kami siapkan untuk daily espresso dengan notes chocolate,nutty,caramel. Cocok untuk milk-based dan black coffee. DM untuk price list dan sample 300g.",,DM SAMPLE untuk price list cafe,"Foto packshot beans WILLKIN di samping portafilter dan gelas latte, clean cafe counter.","Create a premium social media image for WILLKIN Coffee Roastery, an Indonesian coffee beans supplier for cafes.
+Brand direction: modern Jakarta roastery, mature B2B, clean editorial photography, confident but not flashy, no Canva template look.
+Visual style: real roasted coffee beans, black flat-bottom pouch, espresso tools, warm natural cafe counter light, sharp premium product photography, subtle Indonesian specialty coffee cues.
+Color palette: charcoal black, deep coffee brown, clean white, muted forest green accent, small copper detail. Avoid purple gradients, beige-heavy templates, cartoon graphics, generic stock-photo feel.
+Channel: Instagram.
+Product focus: Classic Blend.
+Main message/hook: Beans enak saja tidak cukup kalau cafe butuh konsistensi setiap hari..
+Caption context: Untuk cafe, coffee beans harus stabil: rasa konsisten, mudah dikalibrasi, dan supply aman. Classic Blend kami siapkan untuk daily espresso dengan notes chocolate,nutty,caramel. Cocok untuk milk-based dan black coffee. DM untuk price list dan sample 300g..
+CTA text to include if text rendering is clean: DM SAMPLE untuk price list cafe.
+Composition: leave safe negative space for short overlay text, product and coffee texture must be the hero, professional ad quality for cafe owners.
+Do not include fake logos, fake certification badges, random brand names, misspelled text, or decorative clutter.",failed,"OpenAI image generation failed: 400 {
+  ""error"": {
+    ""message"": ""Billing hard limit has been reached."",
+    ""type"": ""billing_limit_user_error"",
+    ""param"": null,
+    ""code"": ""billing_hard_limit_reached""
+  }
+}",,exported_to_canva,,canva_workflow,Asset/caption siap dipindahkan ke Canva Content Planner untuk schedule Instagram/TikTok.,,marketing,2026-05-31T05:09:38.494Z,2026-06-01T08:52:36.850Z
+C-1780204178494-02,2026-05-31,TikTok,short_video,lead_generation,Classic Blend,Test hook,Test hook,"Ini tanda beans kurang stabil. Classic Blend dibuat untuk cafe yang butuh rasa konsisten, supply aman, dan margin per cup yang jelas.","Opening: Cafe kamu sering ganti setting grinder padahal recipe sama?
+Middle: Classic Blend dibuat untuk daily espresso dengan notes chocolate,nutty,caramel.
+Proof: cocok untuk milk based, easy calibration, dan bisa request sample 300g.
+Close: komentar CAFE atau DM SAMPLE.",Komentar CAFE untuk price list,"Owner talking head 20-30 detik, cutaway roasting, close-up beans, shot espresso.",,,,,approved,,blocked,TikTok API belum dikonfigurasi (TIKTOK_API_URL/TIKTOK_API_TOKEN).,,marketing,2026-05-31T05:09:38.494Z,2026-05-31T05:44:39.943Z
+C-1780204178494-03,2026-05-31,WhatsApp,broadcast,sample_request,Classic Blend,Ready stock beans cafe minggu ini,Ready stock beans cafe minggu ini,"Halo kak, minggu ini kami punya Classic Blend ready stock untuk kebutuhan cafe. Notes: chocolate,nutty,caramel. Bisa request price list cafe dan sample 300g untuk cupping/kalibrasi.",,Balas SAMPLE,,,,,,needs_approval,,,,,sales,2026-05-31T05:09:38.494Z,2026-05-31T05:09:38.494Z
+C-1780204178494-04,2026-05-31,Tokopedia,product_update,marketplace_conversion,Classic Blend,Classic Blend untuk kebutuhan cafe,Classic Blend untuk kebutuhan cafe,"Classic Blend ready stock untuk cafe, kantor, dan reseller. Notes chocolate,nutty,caramel. Chat untuk kebutuhan bulk atau recurring.",,Chat toko untuk harga cafe,,,,,,needs_approval,,,,,marketing,2026-05-31T05:09:38.494Z,2026-05-31T05:09:38.494Z

@@ -1,0 +1,4 @@
+lead_id,nama_cafe,kota,area,alamat,instagram,website,google_maps_url,contact_name,phone,email,segment,has_espresso,visible_supplier,lead_source,last_seen_active,fit_notes,lead_score,status,next_action,next_followup_date
+L-0001,Contoh Cafe Jakarta,Jakarta,Senopati,,,,,Owner,6281200000000,,specialty cafe,yes,unknown,manual,2026-05-30,"aktif posting, menu espresso terlihat",85,new,"kirim intro sample 300g Classic Blend",2026-05-31
+L-0002,Contoh Kopi Bandung,Bandung,Dago,,,,,Manager,,,coffee shop,yes,unknown,manual,2026-05-30,"coffee shop dengan milk based menu",70,new,,2026-06-01
+L-0003,Kedai Manual Brew Bali,Bali,Canggu,,,,,Owner,,,specialty cafe,yes,unknown,manual,2026-05-30,"manual brew dan espresso, cocok Kintamani",72,new,,2026-06-01

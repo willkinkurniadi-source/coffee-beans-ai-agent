@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Growth OS · Willkin Coffee Roastery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon">☕</div>
+        <div class="brand-text">
+          <p class="brand-name">Willkin Coffee</p>
+          <p class="brand-sub">Roastery · Growth OS</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <p class="nav-group-label">Dashboard</p>
+        <a class="nav-item active" data-section="section-overview" href="#section-overview">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5" fill="currentColor"/><rect x="14" y="3" width="7" height="7" rx="1.5" fill="currentColor"/><rect x="3" y="14" width="7" height="7" rx="1.5" fill="currentColor"/><rect x="14" y="14" width="7" height="7" rx="1.5" fill="currentColor"/></svg>
+          KPI Overview
+        </a>
+        <a class="nav-item" data-section="section-status" href="#section-status">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Automation Status
+        </a>
+        <a class="nav-item" data-section="section-api" href="#section-api">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          API Connections
+        </a>
+
+        <p class="nav-group-label">Operations</p>
+        <a class="nav-item" data-section="section-brief" href="#section-brief">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 5h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Daily Brief
+        </a>
+        <a class="nav-item" data-section="section-plan" href="#section-plan">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Daily Plan
+        </a>
+        <a class="nav-item" data-section="section-leads" href="#section-leads">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 21v-2a4 4 0 00-3-3.85" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Leads & Offers
+        </a>
+        <a class="nav-item" data-section="section-pipeline" href="#section-pipeline">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Sales Pipeline
+        </a>
+
+        <p class="nav-group-label">Marketing</p>
+        <a class="nav-item" data-section="section-outreach" href="#section-outreach">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Outreach
+        </a>
+        <a class="nav-item" data-section="section-content" href="#section-content">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Content Factory
+        </a>
+        <a class="nav-item" data-section="section-marketing" href="#section-marketing">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Marketing Plan
+        </a>
+
+        <p class="nav-group-label">Fulfillment</p>
+        <a class="nav-item" data-section="section-packing" href="#section-packing">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" stroke="currentColor" stroke-width="2"/></svg>
+          Packing Queue
+        </a>
+        <a class="nav-item" data-section="section-procurement" href="#section-procurement">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Procurement
+        </a>
+        <a class="nav-item" data-section="section-contracts" href="#section-contracts">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="currentColor" stroke-width="2"/><path d="M14 2v6h6M12 18v-6M9 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Contracts / PO
+        </a>
+
+        <p class="nav-group-label">System</p>
+        <a class="nav-item" data-section="section-ailog" href="#section-ailog">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          AI Activity Log
+        </a>
+        <a class="nav-item" data-section="section-roadmap" href="#section-roadmap">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Roadmap
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-status-badge">
+          <span id="sidebarStatus" class="sidebar-status-text">Memuat...</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <div class="main-wrapper">
+
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-btn" id="menuBtn" aria-label="Toggle sidebar">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div>
+            <p class="topbar-eyebrow">Willkin Coffee Roastery</p>
+            <h1 class="topbar-title">Growth OS</h1>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <span id="lastRun" class="last-run-label"></span>
+          <button id="runDaily" class="btn-primary">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z"/></svg>
+            <span id="runDailyLabel">Run Daily</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="content">
+
+        <section id="section-overview" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">KPI Hari Ini</h2>
+          </div>
+          <div id="kpi" class="kpi-grid"></div>
+        </section>
+
+        <section id="section-status" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Automation Status</h2>
+          </div>
+          <div id="automationStatus" class="status-grid"></div>
+        </section>
+
+        <section id="section-api" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">API Connections</h2>
+            <span id="apiProgress" class="progress-pill">Loading</span>
+          </div>
+          <div id="apiConnections" class="api-grid"></div>
+        </section>
+
+        <section id="section-brief" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Owner Daily Brief</h2>
+          </div>
+          <div id="ownerBrief" class="brief"></div>
+        </section>
+
+        <section id="section-plan" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Daily Plan</h2>
+          </div>
+          <div id="dailyPlan" class="timeline"></div>
+        </section>
+
+        <section id="section-leads" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Top Leads</h2>
+            <button id="scrapeCafeToday" type="button" class="btn-outline">Scrape Cafe Hari Ini</button>
+          </div>
+          <div id="scrapeStatus" class="inline-status"></div>
+          <div id="leads" class="list"></div>
+
+          <div class="section-header" style="margin-top:32px">
+            <h2 class="section-title">Offers</h2>
+          </div>
+          <div id="offers" class="list"></div>
+        </section>
+
+        <section id="section-pipeline" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Sales Pipeline</h2>
+          </div>
+          <div id="pipeline" class="pipeline-grid"></div>
+        </section>
+
+        <section id="section-outreach" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Outreach Queue</h2>
+            <button id="generateOutreach" type="button" class="btn-outline">Generate Drafts</button>
+          </div>
+          <div id="outreachQueue" class="list"></div>
+        </section>
+
+        <section id="section-content" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Content Factory</h2>
+            <button id="generateContent" type="button" class="btn-outline">Generate Content</button>
+          </div>
+          <div id="content" class="content-grid"></div>
+        </section>
+
+        <section id="section-marketing" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Marketing Plan</h2>
+          </div>
+          <div id="marketingPlan" class="list"></div>
+        </section>
+
+        <section id="section-packing" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Packing Queue</h2>
+          </div>
+          <div id="packing" class="list"></div>
+        </section>
+
+        <section id="section-procurement" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Procurement Intelligence</h2>
+          </div>
+          <div id="procurement" class="list"></div>
+        </section>
+
+        <section id="section-contracts" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Contract / PO Recommendations</h2>
+          </div>
+          <div id="contracts" class="list"></div>
+        </section>
+
+        <section id="section-ailog" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">AI Agent Activity</h2>
+            <span id="ailogMeta" class="progress-pill">Belum dijalankan</span>
+          </div>
+          <div id="aiActivityLog" class="ai-log"></div>
+        </section>
+
+        <section id="section-roadmap" class="content-section">
+          <div class="section-header">
+            <h2 class="section-title">Roadmap & Checklist</h2>
+            <span id="roadmapProgress" class="progress-pill">Loading</span>
+          </div>
+          <div id="roadmap" class="roadmap-grid"></div>
+          <div id="monitoringChecklist" class="checklist-grid"></div>
+        </section>
+
+      </main>
+    </div>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="/app.js"></script>
+    <script>
+      // Sidebar toggle (mobile)
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+      document.getElementById('menuBtn').addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('visible');
+      });
+      overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('visible');
+      });
+
+      // Active nav on scroll
+      const navLinks = document.querySelectorAll('.nav-item[data-section]');
+      const sections = document.querySelectorAll('.content-section[id]');
+
+      function updateActive() {
+        let cur = '';
+        sections.forEach(s => {
+          if (window.scrollY + 100 >= s.offsetTop) cur = s.id;
+        });
+        navLinks.forEach(a => a.classList.toggle('active', a.dataset.section === cur));
+      }
+
+      window.addEventListener('scroll', updateActive, { passive: true });
+
+      navLinks.forEach(a => {
+        a.addEventListener('click', e => {
+          e.preventDefault();
+          const t = document.getElementById(a.dataset.section);
+          if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          sidebar.classList.remove('open');
+          overlay.classList.remove('visible');
+        });
+      });
+    </script>
+  </body>
+</html>

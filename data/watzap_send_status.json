@@ -1,0 +1,8 @@
+{
+  "ok": false,
+  "send_ready": false,
+  "target": "6289696756009",
+  "checked_at": "2026-06-01T12:31:49.891Z",
+  "provider_status": "waba_not_connected",
+  "provider_message": "WatZap API error 403: Please Connect WhatsApp Business API First"
+}

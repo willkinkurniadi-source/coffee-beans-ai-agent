@@ -1,0 +1,5 @@
+sku,nama_produk,jenis,origin_or_blend,roast_level,flavor_notes,pack_size_gram,quantity_pack,quantity_kg,roast_date,best_before,hpp_per_kg,harga_cafe_per_kg,harga_retail_per_kg,minimum_order_kg,priority_to_sell,catatan
+HR-ROB-001,House Robusta,robusta,Robusta Indonesia,medium-dark,"bold,cocoa,bitter sweet",1000,30,30,2026-05-30,2026-08-30,95000,148000,148000,1,high,cocok untuk cafe harga ekonomis dan Tokopedia
+CB-7030-001,Classic Blend,blend,70 Robusta 30 Arabica,medium-dark,"chocolate,nutty,caramel",1000,22,22,2026-05-30,2026-08-30,125000,195000,195000,1,high,cocok untuk cafe espresso milk based
+AG-GAYO-001,Arabica Gayo Aceh G1,single origin,Aceh Gayo G1,medium,"cocoa,spice,brown sugar",1000,8,8,2026-05-30,2026-08-30,225000,320000,320000,1,medium,cocok untuk specialty/filter
+AK-KINT-001,Arabica Kintamani Bali G1,single origin,Kintamani Bali G1,medium,"citrus,floral,clean sweet",1000,6,6,2026-05-30,2026-08-30,240000,340000,340000,1,medium,cocok untuk specialty/filter dan story origin Bali

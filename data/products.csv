@@ -1,0 +1,5 @@
+sku,nama_produk,jenis,origin_or_blend,roast_level,flavor_notes,pack_size_gram,harga_cafe_per_kg,harga_retail_per_kg,minimum_order_kg
+HR-ROB-001,House Robusta,robusta,Robusta Indonesia,medium-dark,"bold,cocoa,bitter sweet",1000,148000,148000,1
+CB-7030-001,Classic Blend,blend,70 Robusta 30 Arabica,medium-dark,"chocolate,nutty,caramel",1000,195000,195000,1
+AG-GAYO-001,Arabica Gayo Aceh G1,single origin,Aceh Gayo G1,medium,"cocoa,spice,brown sugar",1000,320000,320000,1
+AK-KINT-001,Arabica Kintamani Bali G1,single origin,Kintamani Bali G1,medium,"citrus,floral,clean sweet",1000,340000,340000,1
