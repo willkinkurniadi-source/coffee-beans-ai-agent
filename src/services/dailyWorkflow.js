@@ -70,6 +70,8 @@ export async function runDailyWorkflow(input = {}) {
 
   return {
     date: new Date().toISOString().slice(0, 10),
+    canvaEnabled: String(process.env.CANVA_WORKFLOW_ENABLED || "").toLowerCase() === "true",
+    canvaQueueUrl: process.env.CANVA_CONTENT_QUEUE_URL || "",
     agentLog: {
       ran_at: new Date().toISOString(),
       total_ms: totalMs,

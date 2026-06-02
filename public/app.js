@@ -167,12 +167,8 @@ async function generateContentDrafts() {
   }
 }
 
-async function updateContent(contentId, action) {
-  const payload = { content_id: contentId };
-  if (action === "canva") {
-    const canvaUrl = window.prompt("Masukkan link folder/queue Canva untuk konten ini. Kosongkan kalau belum ada.");
-    if (canvaUrl) payload.canva_url = canvaUrl.trim();
-  }
+async function updateContent(contentId, action, extraPayload = {}) {
+  const payload = { content_id: contentId, ...extraPayload };
   const response = await fetchWithTimeout(`/api/content/${action}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -185,9 +181,7 @@ async function updateContent(contentId, action) {
   if (action === "design" && result.result && !result.result.generated) {
     window.alert(`Design belum jadi image: ${result.result.message}`);
   }
-  if (action === "canva") {
-    window.alert("Konten ditandai masuk Canva workflow. Status dan link queue/folder akan tetap tampil di dashboard.");
-  }
+  // canva alert dihapus — status tampil langsung di card
   await runDaily();
 }
 
@@ -305,7 +299,17 @@ function render(data) {
 
   content.innerHTML = renderContentFactory(data);
   content.querySelectorAll("[data-content-action]").forEach((button) => {
-    button.addEventListener("click", () => updateContent(button.dataset.contentId, button.dataset.contentAction));
+    button.addEventListener("click", () => {
+      const action = button.dataset.contentAction;
+      const contentId = button.dataset.contentId;
+      if (action === "canva") {
+        const urlInput = content.querySelector(`.canva-url-form[data-content-id="${CSS.escape(contentId)}"] input`);
+        const canvaUrl = urlInput?.value?.trim() || "";
+        updateContent(contentId, action, canvaUrl ? { canva_url: canvaUrl } : {});
+      } else {
+        updateContent(contentId, action);
+      }
+    });
   });
   content.querySelectorAll("[data-content-edit]").forEach((button) => {
     button.addEventListener("click", () => toggleContentEditor(button.dataset.contentEdit));
@@ -670,49 +674,74 @@ function renderContentFactory(data) {
 }
 
 function getCanvaStatus(data) {
-  const instagram = (data.integrations?.services || []).find((item) => item.name === "Instagram");
-  const queueUrl = (data.contentQueue || []).find((item) => item.publish_status === "canva_workflow" && item.url)?.url || "";
+  const enabled = data.canvaEnabled || false;
+  const queueUrl = data.canvaQueueUrl
+    || (data.contentQueue || []).find((item) => item.publish_status === "canva_workflow" && item.url)?.url
+    || "";
   return {
-    enabled: instagram?.configured || false,
-    status: queueUrl ? "ready" : "needs_queue_url",
+    enabled,
+    status: !enabled ? "disabled" : queueUrl ? "ready" : "needs_queue_url",
     queue_url: queueUrl,
-    message: queueUrl
-      ? "Canva queue/folder tersedia dari content yang sudah diexport."
-      : "Canva workflow aktif, tapi link folder/queue belum diisi."
+    message: !enabled
+      ? "Canva workflow belum aktif. Set CANVA_WORKFLOW_ENABLED=true di environment."
+      : queueUrl
+        ? "Canva queue/folder tersedia. Klik link untuk buka Canva Content Planner."
+        : "Canva workflow aktif. Klik 'Export to Canva' pada konten yang sudah siap."
   };
 }
 
 function renderCanvaQueuePanel(canvaStatus) {
+  if (!canvaStatus.enabled) return "";
   return `
     <article class="item canva-panel ${escapeHtml(canvaStatus.status)}">
       <div class="content-meta">
-        <strong>Canva Workflow</strong>
-        <span class="badge ${canvaStatus.status === "ready" ? "connected" : "blocked"}">${escapeHtml(canvaStatus.status)}</span>
+        <strong>Canva Content Planner</strong>
+        <span class="badge ${canvaStatus.status === "ready" ? "published" : ""}">${canvaStatus.status === "ready" ? "ready" : "aktif"}</span>
       </div>
       <p>${escapeHtml(canvaStatus.message)}</p>
       ${canvaStatus.queue_url
-        ? `<a href="${escapeHtml(canvaStatus.queue_url)}" target="_blank" rel="noreferrer">Open Canva Queue / Folder</a>`
-        : `<small>Isi ` + "`CANVA_CONTENT_QUEUE_URL`" + ` di env atau paste link saat klik Export to Canva.</small>`}
+        ? `<a href="${escapeHtml(canvaStatus.queue_url)}" target="_blank" rel="noreferrer">Buka Canva Content Planner →</a>`
+        : `<small>Set <code>CANVA_CONTENT_QUEUE_URL</code> di env untuk link permanen, atau paste saat export.</small>`}
     </article>
   `;
 }
 
+window.saveCanvaUrl = async function(contentId, btn) {
+  const input = btn.previousElementSibling;
+  const url = input?.value?.trim();
+  if (!url) return;
+  btn.disabled = true;
+  btn.textContent = "Menyimpan...";
+  await updateContent(contentId, "canva", { canva_url: url });
+};
+
 function renderCanvaWorkflow(item, canvaStatus) {
+  if (!canvaStatus.enabled) return "";
   const isCanvaChannel = /instagram|tiktok/i.test(item.channel || "");
   const isExported = item.status === "exported_to_canva" || item.publish_status === "canva_workflow";
+  const isReadyToExport = ["approved", "needs_approval"].includes(item.status);
   if (!isCanvaChannel && !isExported) return "";
+  if (!isExported && !isReadyToExport) return "";
   const url = item.url || canvaStatus.queue_url || "";
   const tone = isExported ? "exported" : "pending";
   return `
     <div class="canva-workflow ${tone}">
       <div class="content-meta">
-        <strong>${isExported ? "Canva: Exported" : "Canva: Waiting Export"}</strong>
-        <span class="badge ${isExported ? "exported_to_canva" : "needs_approval"}">${isExported ? "ready in workflow" : "not exported"}</span>
+        <strong>${isExported ? "✓ Exported to Canva" : "Siap Export ke Canva"}</strong>
+        <span class="badge ${isExported ? "published" : ""}">${isExported ? "in workflow" : "belum export"}</span>
       </div>
       <p>${escapeHtml(isExported
-        ? item.publish_message || "Asset/caption sudah ditandai masuk Canva workflow."
-        : "Klik Export to Canva setelah caption dan visual brief siap.")}</p>
-      ${url ? `<a href="${escapeHtml(url)}" target="_blank" rel="noreferrer">Open Canva Queue / Folder</a>` : `<small>Belum ada link Canva untuk item ini.</small>`}
+        ? item.publish_message || "Caption & visual brief sudah masuk Canva Content Planner."
+        : "Klik Export to Canva untuk kirim ke Canva Content Planner.")}</p>
+      ${url
+        ? `<a href="${escapeHtml(url)}" target="_blank" rel="noreferrer">Buka Canva Content Planner →</a>`
+        : isExported
+          ? `<div class="canva-url-form" data-content-id="${escapeHtml(item.content_id)}">
+               <input type="url" placeholder="Paste link Canva folder/queue..." style="margin-top:8px;font-size:12px;padding:6px 10px" />
+               <button type="button" style="margin-top:6px;min-height:28px;font-size:12px" onclick="saveCanvaUrl('${escapeHtml(item.content_id)}', this)">Simpan Link</button>
+             </div>`
+          : `<small style="margin-top:6px;display:block">Link akan muncul setelah export.</small>`
+      }
     </div>
   `;
 }

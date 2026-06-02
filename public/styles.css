@@ -4,14 +4,14 @@
 ═══════════════════════════════════════════════ */
 
 :root {
-  /* Brand palette */
-  --espresso:        #1A0F0A;   /* deepest dark – sidebar bg */
-  --espresso-mid:    #2C1A11;   /* sidebar hover */
-  --espresso-light:  #3D2419;   /* sidebar active bg */
-  --caramel:         #C68B3D;   /* primary accent / CTA */
-  --caramel-light:   #D9A660;   /* accent hover */
-  --cream:           #FAF7F2;   /* page background */
-  --cream-dark:      #F2EDE4;   /* subtle background */
+  /* Brand palette — Willkin Coffee Roastery Brand Guidelines v1.0 */
+  --espresso:        #2A1F17;   /* Deep Coffee Brown — sidebar bg */
+  --espresso-mid:    #3A2B20;   /* sidebar hover */
+  --espresso-light:  #4A3528;   /* sidebar active bg */
+  --caramel:         #B7925C;   /* Gold Accent — CTA, highlights */
+  --caramel-light:   #C9A872;   /* accent hover */
+  --cream:           #F8F7F4;   /* Soft White — page background */
+  --cream-dark:      #ECE5DA;   /* Warm Cream — subtle background */
 
   /* Neutrals */
   --ink:             #1C1410;

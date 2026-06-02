@@ -69,29 +69,57 @@ export async function generateOpenAIDesignAsset(content) {
 
 function buildDesignPrompt(content) {
   const channel = content.channel || "Instagram";
-  const product = content.product_focus || "Roasted Beans - House Blend";
-  const hook = content.hook || content.brief || "Coffee beans stabil untuk cafe";
+  const product = content.product_focus || "Single Origin Arabica";
+  const hook = content.hook || content.brief || "";
   const caption = content.caption_draft || "";
-  const cta = content.cta || "DM SAMPLE";
+  const visualBrief = content.visual_brief || "";
 
   return [
-    "Create a premium social media image for WILLKIN Coffee Roastery, an Indonesian coffee beans supplier for cafes.",
-    "Brand direction: modern Jakarta roastery, mature B2B, clean editorial photography, confident but not flashy, no Canva template look.",
-    "Visual style: real roasted coffee beans, black flat-bottom pouch, espresso tools, warm natural cafe counter light, sharp premium product photography, subtle Indonesian specialty coffee cues.",
-    "Color palette: charcoal black, deep coffee brown, clean white, muted forest green accent, small copper detail. Avoid purple gradients, beige-heavy templates, cartoon graphics, generic stock-photo feel.",
-    `Channel: ${channel}.`,
-    `Product focus: ${product}.`,
-    `Main message/hook: ${hook}.`,
-    `Caption context: ${caption.slice(0, 400)}.`,
-    `CTA text to include if text rendering is clean: ${cta}.`,
-    "Composition: leave safe negative space for short overlay text, product and coffee texture must be the hero, professional ad quality for cafe owners.",
-    "Do not include fake logos, fake certification badges, random brand names, misspelled text, or decorative clutter."
-  ].join("\n");
+    "WILLKIN Coffee Roastery — Brand Guidelines v1.0",
+    "",
+    "BRAND IDENTITY:",
+    "Premium Indonesian specialty coffee roastery. Established in Indonesia.",
+    "Brand statement: Premium Indonesian Coffee, Built for the World.",
+    "Tagline: Built Around Coffee.",
+    "Personality: Sophisticated, Confident, Expert, Global, Premium, Minimal, Mature.",
+    "NOT: Trendy cafe aesthetic, cartoonish, cheap-looking, too many elements.",
+    "",
+    "VISUAL DIRECTION — Cinematic · Warm · Textured · Authentic · Real. Natural. Premium.",
+    "Photography style: cinematic product photography with warm, natural lighting.",
+    "Color palette: Deep Coffee Brown (#2A1F17), Soft White (#F8F7F4), Warm Cream (#ECE5DA), Gold Accent (#B7925C).",
+    "Composition: minimal, clean, intentional negative space. One hero element per frame.",
+    "Texture: matte packaging, roasted bean texture, natural linen or dark slate surfaces.",
+    "Mood: quiet luxury — like a premium watch brand or a Michelin-starred restaurant ingredient photography.",
+    "NO: gradient overlays, stock photo feel, Canva template look, busy backgrounds, decorative clutter.",
+    "NO: fake logos, fake certifications, random brand names, misspelled text.",
+    "",
+    `CHANNEL: ${channel}`,
+    buildChannelSpec(channel),
+    "",
+    `PRODUCT: ${product}`,
+    hook ? `HOOK: ${hook}` : "",
+    visualBrief ? `VISUAL BRIEF: ${visualBrief}` : "",
+    caption ? `CAPTION CONTEXT: ${caption.slice(0, 300)}` : "",
+    "",
+    "OUTPUT: One polished, print-quality image. Hero composition. Brand-consistent. No text overlay unless specified in visual brief.",
+  ].filter(Boolean).join("\n");
+}
+
+function buildChannelSpec(channel) {
+  if (/tiktok/i.test(channel)) {
+    return "FORMAT: 9:16 vertical. Mobile-first. Strong visual hook. Subject centered. Clean or blurred roastery background.";
+  }
+  if (/reels|story/i.test(channel)) {
+    return "FORMAT: 9:16 vertical. Editorial, premium. Single product or texture shot. Minimal — let the product breathe.";
+  }
+  if (/carousel/i.test(channel)) {
+    return "FORMAT: 1:1 square. Clean cream or white background. Product centered. Leave space for text overlay.";
+  }
+  return "FORMAT: 1:1 square. Studio packshot or lifestyle. Warm single key light. Product is hero. Dark or cream background.";
 }
 
 function sizeForChannel(channel = "") {
-  if (/tiktok|reels|short/i.test(channel)) return "1024x1536";
-  if (/story/i.test(channel)) return "1024x1536";
+  if (/tiktok|reels|short|story/i.test(channel)) return "1024x1536";
   return "1024x1024";
 }
 

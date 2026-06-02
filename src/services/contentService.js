@@ -56,7 +56,7 @@ export async function draftDailyContent({ limit = 4, brandVoice } = {}) {
   const existing = await readContentRecords();
   const today = new Date().toISOString().slice(0, 10);
   const existingKeys = new Set(existing.map((item) => `${item.date}:${item.channel}:${item.content_type}:${item.product_focus}`));
-  const plan = generateContentPlan(state.stock || [], brandVoice || "supplier kopi cafe yang reliable dan specialty-aware");
+  const plan = generateContentPlan(state.stock || [], brandVoice || "Premium Indonesian specialty coffee roastery. Sophisticated, minimal, confident. Tone: luxury brand meets professional roastery. Real. Natural. Premium.");
   const now = new Date().toISOString();
   const drafts = [];
 
@@ -320,15 +320,15 @@ function normalizeContentRecord(record = {}) {
   return {
     ...normalized,
     hook: record.hook || record.brief || "",
-    cta: record.cta || "",
-    visual_brief: record.visual_brief || "",
+    cta: normalized.cta || record.cta || "",
+    visual_brief: normalized.visual_brief || record.visual_brief || "",
     design_prompt: record.design_prompt || "",
-    design_status: record.design_status || "",
+    design_status: normalized.design_status || record.design_status || "",
     design_message: record.design_message || "",
-    image_url: record.image_url || "",
-    publish_status: record.publish_status || "",
-    publish_message: record.publish_message || "",
-    published_at: record.published_at || "",
+    image_url: normalized.image_url || record.image_url || "",
+    publish_status: normalized.publish_status || record.publish_status || "",
+    publish_message: normalized.publish_message || record.publish_message || "",
+    published_at: normalized.published_at || record.published_at || "",
     created_at: record.created_at || "",
     updated_at: record.updated_at || ""
   };
